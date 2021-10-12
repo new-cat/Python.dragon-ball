@@ -152,12 +152,71 @@
    #3 1,4 2,5 3
    ```
 
-   
+9. 推导式
 
-### 整体理解
+   结构：`[ expr for value in collection [if condition] ]`  
+
+10. 异常检测与处理
+    1. try - except 语句，若检测出现异常并且与except异常原因一致则跳过try语句剩余部分直接进入except语句，再执行之后的代码。
+
+> Exception 主要有
+>
+> - OverflowError：数值运算超出最大限制
+> - ZeroDivisionError：除数为零
+> - AssertionError：断言语句（assert）失败
+> - AttributeError：尝试访问未知的对象属性  
+> - OSError：操作系统产生的异常（例如打开一个不存在的文件 ）
+> - ImportError：导入模块失败的时候  
+> - IndexError：索引超出序列的范围
+> - KeyError：字典中查找一个不存在的关键字
+> - MemoryError：内存溢出（可通过删除对象释放内存）
+> - NameError：尝试访问一个不存在的变量  
+> - SyntaxError：语法错误导致的异常  
+> - TypeError：不同类型间的无效操作
+> - ValueError：传入无效的参数  
+>
+> 异常之间所属关系图：
+>
+> ![image-20211012203812603](C:\Users\Night\AppData\Roaming\Typora\typora-user-images\image-20211012203812603.png)
+
+```python
+try:
+检测范围
+except Exception[as reason]:
+出现异常后的处理代码
+```
+
+一个 try 语句可能包含多个 except 子句，分别来处理不同的特定的异常。最多只有一个分支会被执行 。**在运用时应注意不同异常的从属关系，坚持对其规范排序，从最针对性的异常到最通用的异常**。
+
+```python
+'''键错误应该在查询错误之前'''
+dict1 = {'a': 1, 'b': 2, 'v': 22}
+try:
+    x = dict1['y']
+except KeyError:
+    print('键错误')
+except LookupError:
+    print('查询错误')
+else:
+    print(x)
+    
+#键错误
+```
+
+ 	2. try-except-finally语句 finally语句最后一定执行
+ 	3. try-except-else语句 else语句只在程序无异常时执行
+
+### 关于Python
 
 1. 关于python文件之间的相互关系以及文件的入口参数含义：
 
    [Python入口函数](https://blog.csdn.net/Iron_Ye/article/details/80044242?ops_request_misc=%7B%22request%5Fid%22%3A%22163387300916780274144200%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&request_id=163387300916780274144200&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-3-80044242.pc_search_result_control_group&utm_term=python+函数入口参数为列表&spm=1018.2226.3001.4187)
 
    对于python，每一个文件相当于一个模块，模块间的引用通过`import()`函数，函数调用通过（文件名.函数名）来访问，每个模块都有一个 `__name__` 属性，当其值是 `__main__` 时，表明该模块自身在运行，否则是被其他文件引入。
+
+2. 调试步骤
+
+   [调试步骤详解](https://blog.csdn.net/qq_33472146/article/details/90606359?ops_request_misc=%7B%22request%5Fid%22%3A%22163403948816780261918467%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&request_id=163403948816780261918467&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-90606359.pc_search_result_control_group&utm_term=Pycharm+debug&spm=1018.2226.3001.4187)
+
+
+
