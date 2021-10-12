@@ -174,10 +174,6 @@
 > - SyntaxError：语法错误导致的异常  
 > - TypeError：不同类型间的无效操作
 > - ValueError：传入无效的参数  
->
-> 异常之间所属关系图：
->
-> ![image-20211012203812603](C:\Users\Night\AppData\Roaming\Typora\typora-user-images\image-20211012203812603.png)
 
 ```python
 try:
