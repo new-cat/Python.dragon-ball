@@ -100,7 +100,7 @@
 
 4. print()函数
 
-   [print()函数详解](https://blog.csdn.net/sinat_28576553/article/details/81154912?ops_request_misc=&request_id=&biz_id=102&utm_term=python print&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-81154912.nonecase&spm=1018.2226.3001.4187)
+   [print()函数详解](https://blog.csdn.net/sinat_28576553/article/details/81154912?ops_request_misc=&request_id=&biz_id=102&utm_term=python%20print&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-81154912.nonecase&spm=1018.2226.3001.4187)
 
    1. 数据格式化输出的格式和注意事项
    2. 转换标志的含义
